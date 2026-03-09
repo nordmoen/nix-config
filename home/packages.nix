@@ -23,6 +23,7 @@
       wireguard-ui
 
       # misc
+      firefox
       nixfmt-rfc-style
 
       # fonts
