@@ -2,6 +2,7 @@
 {
   homebrew = {
     enable = true;
+    enableZshIntegration = true;
 
     onActivation = {
       autoUpdate = true;
@@ -18,6 +19,7 @@
       # dev
       "docker"
       "docker-desktop"
+      "visual-studio-code"
     ];
     brews = [
       "colima"

@@ -18,6 +18,18 @@
         DisableConsoleAccess = true;
       };
 
+      dock = {
+        persistent-apps = [
+          "/Applications/Firefox.app"
+          "/Applications/Ghostty.app"
+          "/Applications/Visual Studio Code.app"
+          "/Applications/Microsoft Outlook.app"
+          "/Applications/Slack.app"
+          "/Applications/Microsoft Teams.app"
+          "/System/Applications/System Settings.app"
+        ];
+      };
+
       finder = {
         _FXShowPosixPathInTitle = true; # title bar full path
         ShowPathbar = true; # breadcrumb nav at bottom
