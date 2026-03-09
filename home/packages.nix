@@ -6,10 +6,16 @@
       bat
       curl
       eza
+      fzf
       just
       ripgrep
       uv
+      zoxide
       zstd
+
+      # Terminal
+      helix
+      ghostty
 
       # Home server
       bitwarden-desktop

@@ -6,6 +6,7 @@
     ./helix.nix
     ./packages.nix
     ./shell.nix
+    ./zoxide.nix
   ];
 
   home = {
