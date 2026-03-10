@@ -14,12 +14,9 @@
     global.brewfile = true;
 
     casks = [
-      # messaging
-      "slack"
       # dev
       "docker"
       "docker-desktop"
-      "visual-studio-code"
     ];
     brews = [
       "colima"

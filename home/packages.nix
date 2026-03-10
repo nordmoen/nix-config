@@ -6,12 +6,18 @@
       bat
       curl
       eza
+      fd
       fzf
       just
       ripgrep
       uv
       zoxide
       zstd
+
+      # Applications
+      firefox
+      slack
+      vscode
 
       # Terminal
       helix
@@ -23,7 +29,6 @@
       wireguard-ui
 
       # misc
-      firefox
       nixfmt-rfc-style
 
       # fonts
