@@ -21,11 +21,9 @@
 
       # Terminal
       helix
-      ghostty
 
       # Home server
       bitwarden-desktop
-      nextcloud-client
       wireguard-ui
 
       # misc

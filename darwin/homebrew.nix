@@ -17,6 +17,8 @@
       # dev
       "docker"
       "docker-desktop"
+      # Home server
+      nextcloud
     ];
     brews = [
       "colima"

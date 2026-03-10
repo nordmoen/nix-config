@@ -26,7 +26,6 @@
       ...
     }@inputs:
     let
-      # TODO: replace with your username
       primaryUser = "jorgen";
     in
     {
