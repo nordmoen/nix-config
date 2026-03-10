@@ -34,6 +34,7 @@
         _FXShowPosixPathInTitle = true; # title bar full path
         ShowPathbar = true; # breadcrumb nav at bottom
         ShowStatusBar = true; # file count & disk space
+        FXPreferredViewStyle = "clmv"; # Column view
       };
 
       NSGlobalDomain = {
