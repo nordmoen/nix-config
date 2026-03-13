@@ -10,6 +10,7 @@
       fzf
       just
       ripgrep
+      rumdl
       uv
       zoxide
       zstd
