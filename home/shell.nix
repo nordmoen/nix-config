@@ -7,8 +7,9 @@ _: {
 
     shellAliases = {
       la = "eza -la";
-      tree = "eza --tree";
+      ll = "eza -l";
       ls = "eza";
+      tree = "eza --tree";
       "nix-switch" = "sudo darwin-rebuild switch --flake ~/.config/nix";
     };
   };
