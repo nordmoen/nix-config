@@ -12,7 +12,7 @@
 
     defaults = {
       menuExtraClock.Show24Hour = true;
-      
+
       loginwindow = {
         GuestEnabled = false;
         DisableConsoleAccess = true;
@@ -39,9 +39,9 @@
 
       NSGlobalDomain = {
         "com.apple.swipescrolldirection" = true; # enable natural scrolling(default to true)
-        "com.apple.sound.beep.feedback" = 0;     # disable beep sound when pressing volume up/down key
-        "com.apple.keyboard.fnState" = false;    # Use media keys by default
-        AppleInterfaceStyle = "Dark";            # dark mode
+        "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
+        "com.apple.keyboard.fnState" = false; # Use media keys by default
+        AppleInterfaceStyle = "Dark"; # dark mode
 
         # Interface settings
         AppleShowAllExtensions = true;
@@ -72,12 +72,12 @@
           "com.apple.AdLib" = {
             allowApplePersonalizedAdvertising = false;
           };
-        
+
           # Speed up Mission Control animations
           "com.apple.dock" = {
             expose-animation-duration = 0.1;
           };
-        
+
           # 24-hour clock in menu bar
           "com.apple.menuextra.clock" = {
             Show24Hour = true;

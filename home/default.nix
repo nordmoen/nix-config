@@ -14,7 +14,7 @@
     stateVersion = "25.11";
     sessionVariables = {
       # shared environment variables
-      PIP_REQUIRE_VIRTUALENV=true;
+      PIP_REQUIRE_VIRTUALENV = true;
     };
 
     # create .hushlogin file to suppress login messages

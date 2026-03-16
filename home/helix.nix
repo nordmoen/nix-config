@@ -28,18 +28,20 @@
         parents = true;
         max-depth = 4;
         git-global = true;
-      }
+      };
     };
-    languages.language = [{
-      name = "nix";
-      auto-format = true;
-      formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
-    }
-    {
-      name = "markdown";
-      soft-wrap.enable = true;
-      text-width = 80;
-      soft-wrap.wrap-at-text-width = true;
-    }];
+    languages.language = [
+      {
+        name = "nix";
+        auto-format = true;
+        formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
+      }
+      {
+        name = "markdown";
+        soft-wrap.enable = true;
+        text-width = 80;
+        soft-wrap.wrap-at-text-width = true;
+      }
+    ];
   };
 }

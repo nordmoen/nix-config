@@ -33,4 +33,3 @@ Etter at dette er gjort første gang kan man senere kjøre:
 ```bash
 sudo darwin-rebuild switch --flake .#HOSTNAME
 ```
-
