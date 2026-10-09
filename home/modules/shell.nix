@@ -18,10 +18,7 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    settings = {
-      add_newline = false;
-      hostname.ssh_only = true;
-    };
+    settings = builtins.fromTOML (builtins.readFile ./starship.toml);
   };
 
   programs.direnv = {
