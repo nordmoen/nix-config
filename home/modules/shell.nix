@@ -11,7 +11,7 @@
       ll = "eza -l";
       ls = "eza";
       tree = "eza --tree";
-      hm-switch = "home-manager switch --flake ~/nix-config#\"$(whoami)@$(hostname -s)\""
+      hm-switch = "home-manager switch --flake ~/Projects/nix-config#\"$(whoami)@$(hostname -s)\"";
     };
   };
 
