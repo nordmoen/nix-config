@@ -1,0 +1,21 @@
+[tools]
+prek = "latest"
+
+[settings]
+install_before = "7d"
+
+[tasks.prepare]
+description = "Prepare development environment"
+run = "prek install"
+
+[tasks.lint]
+description = "Run linters to check for issues"
+run = "prek run --all-files --color always"
+
+[tasks.update]
+description = "Check for updates to the development environment"
+run = [
+    "prek update --freeze --dry-run",
+    "mise upgrade --bump --local --dry-run",
+]
+
