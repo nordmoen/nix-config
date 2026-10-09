@@ -11,5 +11,5 @@
 
   # Optional: make the Nerd Font the default monospace family so
   # terminals/editors pick it up as "Monospace" too.
-  fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" ];
+  fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font Mono" ];
 }
