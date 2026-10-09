@@ -35,6 +35,6 @@
     enableZshIntegration = true;
 
     # Optional: pass flags to `zoxide init`.
-    options = [ "--cmd cd" ];   # then `cd foo` jumps instead of `z foo`
+    options = [ "--cmd cd" ]; # then `cd foo` jumps instead of `z foo`
   };
 }

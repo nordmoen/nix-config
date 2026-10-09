@@ -10,10 +10,10 @@
   ];
 
   # Set once here; bump deliberately when you want new defaults.
-  home.stateVersion = "26.05";      # current HM release
+  home.stateVersion = "26.05"; # current HM release
   targets.genericLinux.enable = true;
 
-  home.username     = username;
+  home.username = username;
   home.homeDirectory =
     if isDarwin then "/Users/${username}" else "/home/${username}";
 
@@ -22,8 +22,8 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    PAGER  = "less";
-    HOST   = host;              # handy in prompts / scripts
+    PAGER = "less";
+    HOST = host; # handy in prompts / scripts
   };
 
   home.packages = with pkgs; [

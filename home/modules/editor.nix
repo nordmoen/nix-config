@@ -3,7 +3,7 @@
 {
   programs.nixvim = {
     enable = true;
-    defaultEditor = true;    # sets $EDITOR / manpager via HM
+    defaultEditor = true; # sets $EDITOR / manpager via HM
     viAlias = true;
     vimAlias = true;
 
@@ -39,7 +39,14 @@
       treesitter = {
         enable = true;
         settings.ensure_installed = [
-          "python" "nix" "lua" "bash" "json" "yaml" "toml" "markdown"
+          "python"
+          "nix"
+          "lua"
+          "bash"
+          "json"
+          "yaml"
+          "toml"
+          "markdown"
         ];
       };
 

@@ -6,7 +6,7 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";   # avoid a second nixpkgs
+      inputs.nixpkgs.follows = "nixpkgs"; # avoid a second nixpkgs
     };
 
     # Do NOT set inputs.nixpkgs.follows on nixvim — it's tested against
@@ -37,10 +37,11 @@
             ./home/hosts/${host}.nix
           ];
         };
-    in {
+    in
+    {
       homeConfigurations = {
         "jorgen@x1-carbon" =
-          mkHome { host = "x1-carbon"; system = "x86_64-linux";  username = "jorgen"; };
+          mkHome { host = "x1-carbon"; system = "x86_64-linux"; username = "jorgen"; };
 
       };
     };

@@ -3,9 +3,13 @@
 {
   # ---- Always-on system/build tooling: keep in Nix ------------------
   home.packages = with pkgs; [
-    git gh
-    gcc gnumake pkg-config   # build deps for native extensions
-    nil nixpkgs-fmt          # nix LSP + formatter
+    git
+    gh
+    gcc
+    gnumake
+    pkg-config # build deps for native extensions
+    nil
+    nixpkgs-fmt # nix LSP + formatter
   ];
 
   # ---- Language runtimes & dev CLIs: delegate to mise ---------------
@@ -18,7 +22,7 @@
     mutableSettings = true;
 
     # Shell hook so mise auto-switches tools per directory.
-    enableZshIntegration = true;   # (add enableBashIntegration if you use bash)
+    enableZshIntegration = true; # (add enableBashIntegration if you use bash)
 
     # Global (machine-wide) defaults. These are the fallback versions;
     # any repo's mise.toml / .tool-versions overrides them.
@@ -26,9 +30,9 @@
       settings = {
         lockfile = true;
         minimum_release_age = "7d";
-        experimental = true;       # enables the newer mise features
+        experimental = true; # enables the newer mise features
         verbose = false;
-        idiomatic_version_file_enable_tools = [ "python" ];  # read .python-version
+        idiomatic_version_file_enable_tools = [ "python" ]; # read .python-version
       };
 
       # Optional: rename a tool for convenience
