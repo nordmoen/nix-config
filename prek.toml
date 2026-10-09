@@ -12,16 +12,6 @@ hooks = [
 ]
 
 [[repos]]
-repo = "local"
-
-[[repos.hooks]]
-id = "nixfmt"
-name = "nixfmt"
-language = "system"
-entry = "nixpkgs-fmt"
-types = ["nix"]
-
-[[repos]]
 repo = "https://github.com/zizmorcore/zizmor-pre-commit"
 rev = "fa412071e4f5d44d44f9e365f4676f9df92456a2"
 hooks = [

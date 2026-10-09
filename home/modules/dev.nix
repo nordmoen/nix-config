@@ -9,7 +9,6 @@
     gnumake
     pkg-config # build deps for native extensions
     nil
-    nixpkgs-fmt # nix LSP + formatter
   ];
 
   # ---- Language runtimes & dev CLIs: delegate to mise ---------------
