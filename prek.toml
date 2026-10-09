@@ -10,3 +10,13 @@ hooks = [
   { id = "end-of-file-fixer" },
   { id = "trailing-whitespace" },
 ]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "nixfmt"
+name = "nixfmt"
+language = "system"
+entry = "nixpkgs-fmt"
+types = ["nix"]
