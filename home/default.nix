@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./modules/bitwarden.nix
     ./modules/dev.nix
     ./modules/editor.nix
     ./modules/fonts.nix
