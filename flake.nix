@@ -8,6 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";   # avoid a second nixpkgs
     };
+
+    # Do NOT set inputs.nixpkgs.follows on nixvim — it's tested against
+    # its own nixpkgs revision, and `follows` opts out of those guarantees.
+    nixvim.url = "github:nix-community/nixvim";
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -27,6 +32,7 @@
           };
 
           modules = [
+            inputs.nixvim.homeModules.nixvim
             ./home/default.nix
             ./home/hosts/${host}.nix
           ];
