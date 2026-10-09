@@ -13,7 +13,7 @@
 
   # Set once here; bump deliberately when you want new defaults.
   home.stateVersion = "26.05"; # current HM release
-  targets.genericLinux.enable = true;
+  targets.genericLinux.enable = lib.mkIf (!isDarwin) true;
 
   home.username = username;
   home.homeDirectory =
