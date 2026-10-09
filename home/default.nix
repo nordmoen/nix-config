@@ -4,6 +4,7 @@
   imports = [
     ./modules/dev.nix
     ./modules/editor.nix
+    ./modules/fonts.nix
     ./modules/git.nix
     ./modules/shell.nix
   ];
