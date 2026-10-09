@@ -7,6 +7,7 @@
     ./modules/fonts.nix
     ./modules/git.nix
     ./modules/shell.nix
+    ./modules/vscode.nix
   ];
 
   # Set once here; bump deliberately when you want new defaults.
