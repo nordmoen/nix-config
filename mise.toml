@@ -1,5 +1,4 @@
 [tools]
-"aqua:numtide/treefmt" = "latest"
 prek = "latest"
 
 [settings]
