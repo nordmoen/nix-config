@@ -10,6 +10,7 @@
 
   # Set once here; bump deliberately when you want new defaults.
   home.stateVersion = "26.05";      # current HM release
+  targets.genericLinux.enable = true;
 
   home.username     = username;
   home.homeDirectory =
@@ -31,6 +32,5 @@
     fzf
     jq
     ripgrep
-    zoxide
   ];
 }

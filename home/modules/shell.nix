@@ -29,4 +29,15 @@
     nix-direnv.enable = true;
     enableZshIntegration = true;
   };
+
+  programs.zoxide = {
+    enable = true;
+
+    # zsh integration generates the init hook in programs.zsh.initContent.
+    # Defaults to true because zsh is enabled, but set it explicitly.
+    enableZshIntegration = true;
+
+    # Optional: pass flags to `zoxide init`.
+    options = [ "--cmd cd" ];   # then `cd foo` jumps instead of `z foo`
+  };
 }
