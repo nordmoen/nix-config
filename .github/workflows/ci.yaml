@@ -11,9 +11,6 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca
-        with:
-          minimum_release_age: 7d
       - uses: j178/prek-action@1382ad72dea72f9d53832f2bcb65b3e87a947204
 
   flake:
