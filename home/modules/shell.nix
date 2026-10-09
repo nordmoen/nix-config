@@ -30,4 +30,3 @@
     enableZshIntegration = true;
   };
 }
-

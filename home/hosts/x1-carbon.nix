@@ -4,4 +4,3 @@
   home.packages = with pkgs; [
   ];
 }
-

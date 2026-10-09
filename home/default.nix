@@ -29,7 +29,7 @@
     eza
     fd
     fzf
-    jq 
+    jq
     ripgrep
     zoxide
   ];

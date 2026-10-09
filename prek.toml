@@ -10,11 +10,3 @@ hooks = [
   { id = "end-of-file-fixer" },
   { id = "trailing-whitespace" },
 ]
-
-[[repos]]
-repo = "https://github.com/NixOS/nixfmt"
-rev = "3ada88408156ca4893acc1f7c7bc85cd82129f53"
-hooks = [
-  { id = "nixfmt" },
-]
-
