@@ -17,3 +17,10 @@ rev = "fa412071e4f5d44d44f9e365f4676f9df92456a2"
 hooks = [
   { id = "zizmor" }
 ]
+
+[[repos]]
+repo = "https://github.com/google/yamlfmt"
+rev = "21ca5323a9c87ee37a434e0ca908efc0a89daa07"
+hooks = [
+  { id = "yamlfmt", pass_filenames = false }
+]
