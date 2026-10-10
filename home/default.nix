@@ -14,6 +14,7 @@
     ./modules/bitwarden.nix
     ./modules/dev.nix
     ./modules/editor.nix
+    ./modules/firefox.nix
     ./modules/fonts.nix
     ./modules/ghostty.nix
     ./modules/git.nix
