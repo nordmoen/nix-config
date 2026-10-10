@@ -46,14 +46,18 @@
       treesitter = {
         enable = true;
         settings.ensure_installed = [
-          "python"
-          "nix"
-          "lua"
           "bash"
+          "dockerfile"
+          "javascript"
           "json"
-          "yaml"
-          "toml"
           "markdown"
+          "nix"
+          "python"
+          "rust"
+          "sql"
+          "toml"
+          "typescript"
+          "yaml"
         ];
       };
 
