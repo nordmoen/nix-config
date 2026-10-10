@@ -9,7 +9,8 @@ enkelt kan tilpasses Mac).
    - Legg til nye maskiner her
 - [`home/default.nix`](./home/default.nix) definerer delte oppgaver for alle
   maskiner
-- `hosts/<hostname>.nix` definerer maskin spesifikke oppgaver
+   - Legg til Linux/GNOME spesifikke endringer i
+     [`home/linux.nix`](./home/linux.nix)
 
 ## Installasjon
 
