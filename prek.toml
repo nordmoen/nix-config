@@ -34,3 +34,10 @@ name = "nix flake check"
 language = "system"
 entry = "nix flake check --all-systems --no-build"
 pass_filenames = false
+
+[[repos.hooks]]
+id = "nix-fmt"
+name = "nix fmt"
+language = "system"
+entry = "nix fmt"
+types = ["nix"]

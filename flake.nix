@@ -15,10 +15,38 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
+      forAllSystems =
+        f:
+        nixpkgs.lib.genAttrs systems (
+          system:
+          f (
+            import nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            }
+          )
+        );
+
       # ---- Factory: one call = one home configuration ------------------
-      mkHome = { host, system, username }:
+      mkHome =
+        {
+          host,
+          system,
+          username,
+        }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
             inherit system;
@@ -27,7 +55,12 @@
 
           # Values available to every module as normal arguments.
           extraSpecialArgs = {
-            inherit inputs host username system;
+            inherit
+              inputs
+              host
+              username
+              system
+              ;
             isDarwin = system == "aarch64-darwin" || system == "x86_64-darwin";
           };
 
@@ -39,9 +72,14 @@
         };
     in
     {
+      formatter = forAllSystems (pkgs: pkgs.nixfmt);
+
       homeConfigurations = {
-        "jorgen@x1-carbon" =
-          mkHome { host = "x1-carbon"; system = "x86_64-linux"; username = "jorgen"; };
+        "jorgen@x1-carbon" = mkHome {
+          host = "x1-carbon";
+          system = "x86_64-linux";
+          username = "jorgen";
+        };
 
       };
     };
