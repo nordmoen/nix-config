@@ -8,7 +8,6 @@
     gcc
     gnumake
     pkg-config # build deps for native extensions
-    nil
   ];
 
   # ---- Language runtimes & dev CLIs: delegate to mise ---------------
