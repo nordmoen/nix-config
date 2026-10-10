@@ -1,12 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  isDarwin,
-  ...
-}:
-
+{ ... }:
 {
   programs.nixvim = {
     enable = true;

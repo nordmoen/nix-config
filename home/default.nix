@@ -1,8 +1,6 @@
 {
-  config,
   pkgs,
   lib,
-  inputs,
   host,
   username,
   isDarwin,
