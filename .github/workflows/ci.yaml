@@ -11,18 +11,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: j178/prek-action@1382ad72dea72f9d53832f2bcb65b3e87a947204
-
-  flake:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          persist-credentials: false
       - uses: cachix/install-nix-action@13d8dd58da0234aa297dedd986986ccb8e7f3e24
         with:
           extra_nix_config: |
             experimental-features = nix-command flakes
-      # Evaluates every output across all systems without building —
-      # catches errors in the darwin config that a Linux runner can't build.
-      - run: nix flake check --no-build --all-systems
+      - uses: j178/prek-action@1382ad72dea72f9d53832f2bcb65b3e87a947204

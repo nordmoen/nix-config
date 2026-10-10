@@ -24,3 +24,13 @@ rev = "21ca5323a9c87ee37a434e0ca908efc0a89daa07"
 hooks = [
   { id = "yamlfmt", pass_filenames = false }
 ]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "nix-flake"
+name = "nix flake check"
+language = "system"
+entry = "nix flake check --all-systems --no-build"
+pass_filenames = false
