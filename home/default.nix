@@ -15,6 +15,7 @@
     ./modules/dev.nix
     ./modules/editor.nix
     ./modules/fonts.nix
+    ./modules/ghostty.nix
     ./modules/git.nix
     ./modules/shell.nix
     ./modules/vscode.nix
