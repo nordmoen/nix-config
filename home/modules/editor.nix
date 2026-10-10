@@ -1,4 +1,11 @@
-{ pkgs, lib, config, inputs, isDarwin, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  isDarwin,
+  ...
+}:
 
 {
   programs.nixvim = {

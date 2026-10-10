@@ -1,4 +1,13 @@
-{ config, pkgs, lib, inputs, host, username, isDarwin, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  host,
+  username,
+  isDarwin,
+  ...
+}:
 
 {
   imports = [
@@ -17,8 +26,7 @@
   news.display = "silent";
 
   home.username = username;
-  home.homeDirectory =
-    if isDarwin then "/Users/${username}" else "/home/${username}";
+  home.homeDirectory = if isDarwin then "/Users/${username}" else "/home/${username}";
 
   # Let Home Manager manage itself (also gives you the `hm` CLI alias).
   programs.home-manager.enable = true;
