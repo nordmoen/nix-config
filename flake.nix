@@ -41,7 +41,7 @@
         );
 
       # ---- Factory: one call = one home configuration ------------------
-      mkHome =
+      mkLinux =
         {
           host,
           system,
@@ -61,13 +61,12 @@
               username
               system
               ;
-            isDarwin = system == "aarch64-darwin" || system == "x86_64-darwin";
+            isDarwin = false;
           };
 
           modules = [
             inputs.nixvim.homeModules.nixvim
             ./home/default.nix
-            ./home/hosts/${host}.nix
           ];
         };
     in
@@ -75,7 +74,7 @@
       formatter = forAllSystems (pkgs: pkgs.nixfmt);
 
       homeConfigurations = {
-        "jorgen@x1-carbon" = mkHome {
+        "jorgen@x1-carbon" = mkLinux {
           host = "x1-carbon";
           system = "x86_64-linux";
           username = "jorgen";

@@ -1,8 +1,7 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
-  home.packages = with pkgs; [
-  ];
+  targets.genericLinux.enable = true;
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
