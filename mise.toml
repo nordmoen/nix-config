@@ -12,6 +12,10 @@ run = "prek install"
 description = "Run linters to check for issues"
 run = "prek run --all-files --color always"
 
+[tasks.clean]
+description = "Clean Nix generations + unreachable stores"
+run = "nix-collect-garbage -d"
+
 [tasks.update]
 description = "Check for updates to the development environment"
 run = [
