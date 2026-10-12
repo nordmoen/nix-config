@@ -29,7 +29,10 @@
 
     clipboard.register = "unnamedplus";
 
-    colorschemes.catppuccin.enable = true;
+    colorschemes.catppuccin = {
+      enable = true;
+      settings.flavour = "frappe";
+    };
 
     # ---- Quality-of-life plugins -----------------------------------
     plugins = {
