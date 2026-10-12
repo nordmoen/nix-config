@@ -25,6 +25,13 @@
       splitright = true;
       splitbelow = true;
       wrap = false;
+
+      spell = true;
+      spelllang = [
+        "en"
+        "nb"
+      ];
+      spelloptions = "camel";
     };
 
     clipboard.register = "unnamedplus";
@@ -75,10 +82,11 @@
         "<leader>fb" = "buffers";
       };
     };
+
     lsp = {
       servers = {
-        # Combine `pyright` and `ruff` by turing of `ruff` responsibility in
-        # `pyright`
+        # Combine `pyright` and `ruff` by turning off `ruff` responsibility
+        # in `pyright`
         pyright = {
           enable = true;
           config = {
@@ -116,5 +124,19 @@
         }
       ];
     };
+
+    extraConfigLua = ''
+      -- Nixvim strips the 'site' dir from runtimepath; put it back so
+      -- both the Norwegian (nb) and dirtytalk (programming) spell files
+      -- can be found/downloaded.
+      vim.opt.runtimepath:prepend(vim.fs.joinpath(vim.fn.stdpath("data"), "site"))
+
+      -- Re-assert 'camel' since treesitter sets 'noplainbuffer'.
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function()
+          vim.opt_local.spelloptions:append("camel")
+        end,
+      })
+    '';
   };
 }
