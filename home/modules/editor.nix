@@ -36,7 +36,7 @@
 
     # ---- Quality-of-life plugins -----------------------------------
     plugins = {
-      lsp.enable = true;
+      lspconfig.enable = true;
 
       treesitter = {
         enable = true;
@@ -74,6 +74,47 @@
         "<leader>fg" = "live_grep";
         "<leader>fb" = "buffers";
       };
+    };
+    lsp = {
+      servers = {
+        # Combine `pyright` and `ruff` by turing of `ruff` responsibility in
+        # `pyright`
+        pyright = {
+          enable = true;
+          config = {
+            pyright.disableOrganizeImports = true;
+            python.analysis.ignore = [ "*" ];
+          };
+        };
+        ruff.enable = true;
+
+        gh_actions_ls.enable = true;
+        nil_ls.enable = true;
+        rumdl.enable = true;
+        ts_ls.enable = true;
+      };
+      keymaps = [
+        {
+          key = "<leader>ca";
+          lspBufAction = "code_action";
+        }
+        {
+          key = "<leader>rn";
+          lspBufAction = "rename";
+        }
+        {
+          key = "gd";
+          lspBufAction = "definition";
+        }
+        {
+          key = "gD";
+          lspBufAction = "references";
+        }
+        {
+          key = "K";
+          lspBufAction = "hover";
+        }
+      ];
     };
   };
 }
