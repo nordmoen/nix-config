@@ -22,4 +22,10 @@
   programs.zsh.shellAliases = {
     dnfup = "sudo dnf upgrade --refresh";
   };
+
+  # Linux services or programs that should not be installed on other hosts
+  services.nextcloud-client = {
+    enable = true;
+    startInBackground = true;
+  };
 }
