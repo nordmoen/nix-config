@@ -16,13 +16,13 @@
     history = {
       size = 200000;
       save = 200000;
-      extended = true;              # timestamps → atuin + `history -i`
-      share = true;                 # default; live cross-session history
-      ignoreDups = true;            # default
-      ignoreAllDups = false;        # keep frequency data for atuin/fzf
-      saveNoDups = true;            # tidy on-disk file
-      findNoDups = false;           # keep up-arrow cycling predictable
-      ignoreSpace = true;           # default; space-prefix = not recorded
+      extended = true; # timestamps → atuin + `history -i`
+      share = true; # default; live cross-session history
+      ignoreDups = true; # default
+      ignoreAllDups = false; # keep frequency data for atuin/fzf
+      saveNoDups = true; # tidy on-disk file
+      findNoDups = false; # keep up-arrow cycling predictable
+      ignoreSpace = true; # default; space-prefix = not recorded
       expireDuplicatesFirst = true; # trim dups before uniques
       ignorePatterns = [
         "rm *"
