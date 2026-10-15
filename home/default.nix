@@ -40,6 +40,7 @@
 
   home.packages = with pkgs; [
     bat
+    bottom
     duckdb
     eza
     fd
