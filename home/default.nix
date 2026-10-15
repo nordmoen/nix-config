@@ -17,6 +17,7 @@
     ./modules/ghostty.nix
     ./modules/git.nix
     ./modules/shell.nix
+    ./modules/ssh.nix
     ./modules/vscode.nix
   ]
   ++ lib.optional (!isDarwin) ./linux.nix;
