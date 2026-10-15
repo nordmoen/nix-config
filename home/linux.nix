@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   targets.genericLinux.enable = true;
@@ -9,13 +9,26 @@
       # Use the Nerd Font from fonts.nix for GNOME apps too:
       monospace-font-name = "JetBrainsMono Nerd Font 11";
     };
-    "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
-    "org/gnome/desktop/calendar".show-weekdate = true;
+    "org/gnome/desktop/calendar" = {
+      show-weekdate = true;
+    };
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
     };
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 4;
+      button-layout = "appmenu:minimize,maximize,close";
+    };
+    "system/locale" = {
+      region = "nb_NO.UTF-8";
+    };
+    "org/gnome/desktop/input-sources" = {
+      sources = [
+        (lib.hm.gvariant.mkTuple [
+          "xkb"
+          "no"
+        ])
+      ];
     };
   };
 

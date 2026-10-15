@@ -46,4 +46,21 @@
     jq
     ripgrep
   ];
+
+  # English UI, Norwegian regional formats
+  home.language = {
+    base = "en_GB.UTF-8"; # LANG – fallback for anything unset below
+    messages = "en_GB.UTF-8"; # LC_MESSAGES – application UI language
+    ctype = "en_GB.UTF-8"; # LC_CTYPE
+    collate = "en_GB.UTF-8"; # LC_COLLATE – alphabetical ordering
+
+    time = "nb_NO.UTF-8"; # LC_TIME – dd.mm.yyyy, 24h clock
+    numeric = "nb_NO.UTF-8"; # LC_NUMERIC – decimal comma
+    monetary = "nb_NO.UTF-8"; # LC_MONETARY – NOK
+    measurement = "nb_NO.UTF-8"; # LC_MEASUREMENT – metric
+    paper = "nb_NO.UTF-8"; # LC_PAPER – A4
+    name = "nb_NO.UTF-8"; # LC_NAME
+    address = "nb_NO.UTF-8"; # LC_ADDRESS
+    telephone = "nb_NO.UTF-8"; # LC_TELEPHONE
+  };
 }
