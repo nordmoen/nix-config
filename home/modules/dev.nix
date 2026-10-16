@@ -33,7 +33,10 @@
         minimum_release_age = "7d";
         experimental = true; # enables the newer mise features
         verbose = false;
-        idiomatic_version_file_enable_tools = [ "python" ]; # read .python-version
+      };
+
+      tools = {
+        uv = "latest";
       };
 
       # Optional: rename a tool for convenience
