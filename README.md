@@ -6,11 +6,11 @@ enkelt kan tilpasses Mac).
 ## Oppbygning
 
 - [`flake.nix`](./flake.nix) er utgangspunktet for oppsettet
-   - Legg til nye maskiner her
+  - Legg til nye maskiner her
 - [`home/default.nix`](./home/default.nix) definerer delte oppgaver for alle
   maskiner
-   - Legg til Linux/GNOME spesifikke endringer i
-     [`home/linux.nix`](./home/linux.nix)
+  - Legg til Linux/GNOME spesifikke endringer i
+    [`home/linux.nix`](./home/linux.nix)
 
 ## Installasjon
 
