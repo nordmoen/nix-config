@@ -15,4 +15,42 @@
       pull.rebase = true;
     };
   };
+
+  programs.lazygit = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      gui.theme = {
+        activeBorderColor = [
+          "green"
+          "bold"
+        ];
+        inactiveBorderColor = [ "default" ];
+      };
+      git.diffRenderers = [
+        {
+          colorArg = "always";
+          command = "delta --paging=never";
+        }
+      ];
+      confirmOnQuit = false;
+    };
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      features = "decorations";
+      navigate = true;
+      side-by-side = true;
+      line-numbers = true;
+      syntax-theme = "Catppuccin Frappe";
+      decorations = {
+        commit-decoration-style = "bold yellow box ul";
+        file-style = "bold yellow ul";
+        file-decoration-style = "none";
+      };
+    };
+  };
 }
