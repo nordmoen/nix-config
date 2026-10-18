@@ -1,52 +1,55 @@
-{ ... }:
+_:
 
 {
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      la = "eza -la";
-      ll = "eza -l";
-      ls = "eza";
-      tree = "eza --tree";
-      hm-switch = "home-manager switch --flake ~/Projects/nix-config#\"$(whoami)@$(hostname -s)\"";
+  programs = {
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      shellAliases = {
+        la = "eza -la";
+        ll = "eza -l";
+        ls = "eza";
+        tree = "eza --tree";
+        hm-switch = "home-manager switch --flake ~/Projects/nix-config#\"$(whoami)@$(hostname -s)\"";
+      };
+
+      history = {
+        size = 200000;
+        save = 200000;
+        extended = true; # timestamps → atuin + `history -i`
+        share = true; # default; live cross-session history
+        ignoreDups = true; # default
+        ignoreAllDups = false; # keep frequency data for atuin/fzf
+        saveNoDups = true; # tidy on-disk file
+        findNoDups = false; # keep up-arrow cycling predictable
+        ignoreSpace = true; # default; space-prefix = not recorded
+        expireDuplicatesFirst = true; # trim dups before uniques
+        ignorePatterns = [
+          "rm *"
+          "rm -rf *"
+          "pkill *"
+          "kill *"
+        ];
+      };
     };
-    history = {
-      size = 200000;
-      save = 200000;
-      extended = true; # timestamps → atuin + `history -i`
-      share = true; # default; live cross-session history
-      ignoreDups = true; # default
-      ignoreAllDups = false; # keep frequency data for atuin/fzf
-      saveNoDups = true; # tidy on-disk file
-      findNoDups = false; # keep up-arrow cycling predictable
-      ignoreSpace = true; # default; space-prefix = not recorded
-      expireDuplicatesFirst = true; # trim dups before uniques
-      ignorePatterns = [
-        "rm *"
-        "rm -rf *"
-        "pkill *"
-        "kill *"
-      ];
+
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = builtins.fromTOML (builtins.readFile ./config/starship.toml);
     };
-  };
 
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = builtins.fromTOML (builtins.readFile ./config/starship.toml);
-  };
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+      enableZshIntegration = true;
+    };
 
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }

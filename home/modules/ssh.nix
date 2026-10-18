@@ -28,38 +28,48 @@ in
     SSH_AUTH_SOCK = rbwSocketLinux;
   };
 
-  # macOS has no XDG_RUNTIME_DIR, so the path needs a command substitution
-  # that sessionVariables can't express.
-  programs.zsh.initExtra = lib.mkIf isDarwin ''
-    export SSH_AUTH_SOCK="${rbwSocketDarwin}"
-  '';
+  programs = {
 
-  # ---------------------------------------------------------------------------
-  # ~/.ssh/config
-  # ---------------------------------------------------------------------------
-  programs.ssh = {
-    enable = true;
+    # ---------------------------------------------------------------------------
+    # ~/.ssh/config
+    # ---------------------------------------------------------------------------
+    ssh = {
+      enable = true;
 
-    # Suppress Home Manager's implicit `Host *` block, which would otherwise
-    # add a competing IdentityFile list.
-    enableDefaultConfig = false;
+      # Suppress Home Manager's implicit `Host *` block, which would otherwise
+      # add a competing IdentityFile list.
+      enableDefaultConfig = false;
 
-    includes = [ "~/.ssh/config.local" ];
+      includes = [ "~/.ssh/config.local" ];
 
-    settings = {
-      # Defaults only. Deliberately no IdentityFile/IdentitiesOnly here:
-      # rbw offers the vault's keys and selects the right one itself.
-      "*" = {
-        hashKnownHosts = true;
-        serverAliveInterval = 60;
-        serverAliveCountMax = 3;
-        compression = false;
+      settings = {
+        # Defaults only. Deliberately no IdentityFile/IdentitiesOnly here:
+        # rbw offers the vault's keys and selects the right one itself.
+        "*" = {
+          hashKnownHosts = true;
+          serverAliveInterval = 60;
+          serverAliveCountMax = 3;
+          compression = false;
+        };
+
+        "router" = {
+          hostname = "192.168.50.1";
+          user = "root";
+        };
       };
+    };
 
-      "router" = {
-        hostname = "192.168.50.1";
-        user = "root";
+    zsh = {
+      shellAliases = {
+        # Public halves straight from the agent — paste into GitHub/GitLab.
+        "ssh-pub" = "ssh-add -L";
+        "ssh-load" = "rbw unlock";
       };
+      # macOS has no XDG_RUNTIME_DIR, so the path needs a command substitution
+      # that sessionVariables can't express.
+      initExtra = lib.mkIf isDarwin ''
+        export SSH_AUTH_SOCK="${rbwSocketDarwin}"
+      '';
     };
   };
 
@@ -76,10 +86,4 @@ in
     fi
     run chmod 600 "${sshDir}/config.local"
   '';
-
-  programs.zsh.shellAliases = {
-    # Public halves straight from the agent — paste into GitHub/GitLab.
-    "ssh-pub" = "ssh-add -L";
-    "ssh-load" = "rbw unlock";
-  };
 }

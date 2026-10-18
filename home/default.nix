@@ -23,11 +23,12 @@
   ++ lib.optional (!isDarwin) ./linux.nix;
 
   # Set once here; bump deliberately when you want new defaults.
-  home.stateVersion = "26.05";
+  home = {
+    stateVersion = "26.05";
+    inherit username;
+    homeDirectory = if isDarwin then "/Users/${username}" else "/home/${username}";
+  };
   news.display = "silent";
-
-  home.username = username;
-  home.homeDirectory = if isDarwin then "/Users/${username}" else "/home/${username}";
 
   # Let Home Manager manage itself (also gives you the `hm` CLI alias).
   programs.home-manager.enable = lib.mkIf (!isDarwin) true;

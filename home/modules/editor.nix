@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   programs.nixvim = {
     enable = true;
     defaultEditor = true; # sets $EDITOR / manpager via HM
