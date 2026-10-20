@@ -41,3 +41,12 @@ nix flake update
 # Oppdater `home-manager`
 hm-switch
 ```
+
+## Lokal utvikling
+
+For å enklere kunne jobbe med oppsettet i prosjektet er det konfigurert et
+utviklings-shell som kan brukes for å kjøre lint-ere eller formatering.
+
+```bash
+nix develop
+```
