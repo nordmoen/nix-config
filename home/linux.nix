@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   targets.genericLinux.enable = true;
@@ -41,4 +41,8 @@
     enable = true;
     startInBackground = true;
   };
+
+  home.packages = with pkgs; [
+    evolution
+  ];
 }
